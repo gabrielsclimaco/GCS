@@ -1,8 +1,8 @@
 $main-font:       Helvetica, Arial;
-$bg-image:        "bg.jpg";
+$bg-image:        "/bg.jpg";
 $form-bg-color:   #000;
 $form-btn-color:  rgb(130, 224, 255);
-$msg-even-color:  rgb(255, 255, 255, 0.5)
+$msg-even-color:  rgb(255, 255, 255, 0.5);
 $msg-odd-color:   rgb(238, 238, 238, 0.5);
 
 * {
@@ -40,6 +40,7 @@ form button {
 
 #messages li {
   padding: 5px 10px;
+  font-size: 1.5em;
 }
 
 #messages li:nth-child(even) {
@@ -49,4 +50,3 @@ form button {
 #messages li:nth-child(odd) {
   background: $msg-odd-color;
 }
-
