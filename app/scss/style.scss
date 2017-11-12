@@ -1,0 +1,52 @@
+$main-font:       Helvetica, Arial;
+$bg-image:        "bg.jpg";
+$form-bg-color:   #000;
+$form-btn-color:  rgb(130, 224, 255);
+$msg-even-color:  rgb(255, 255, 255, 0.5)
+$msg-odd-color:   rgb(238, 238, 238, 0.5);
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+body {
+  font: 13px $main-font;
+}
+
+.body {
+  background-image: url($bg-image);
+}
+
+form {
+  background: $form-bg-color; padding: 3px; position: fixed; bottom: 0; width: 100%;
+}
+
+form input {
+  border: 0; padding: 10px; width: 90%; margin-right: .5%;
+}
+
+form button {
+  width: 9%;
+  background: $form-btn-color;
+  border: none;
+  padding: 10px;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
+  padding: 5px 10px;
+}
+
+#messages li:nth-child(even) {
+  background: $msg-even-color;
+}
+
+#messages li:nth-child(odd) {
+  background: $msg-odd-color;
+}
+
