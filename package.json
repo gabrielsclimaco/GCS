@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,17 @@
   "homepage": "https://github.com/gabrielsclimaco/GCS#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.0.4",
+    "uglify-js": "^3.1.9"
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "pump": "^1.0.3",
+    "uglify-es": "github:mishoo/UglifyJS2#harmony",
+    "webpack": "^3.8.1",
+    "webpack-stream": "^4.0.0"
   }
 }
