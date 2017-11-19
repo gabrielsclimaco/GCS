@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "gulp": "gulp",
+    "lint": "eslint --ext .js app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,12 @@
   },
   "homepage": "https://github.com/gabrielsclimaco/GCS#readme",
   "dependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "express": "^4.16.2",
     "socket.io": "^2.0.4",
     "uglify-js": "^3.1.9"
