@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app/index.js",
     "gulp": "gulp",
     "lint": "eslint --ext .js app",
     "test": "echo \"Error: no test specified\" && exit 1"
