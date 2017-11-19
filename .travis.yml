@@ -1,0 +1,25 @@
+language: node_js
+
+node_js:
+  7
+
+cache:
+  directories:
+    - "node_modules"
+
+before_install:
+  - npm i -g gulp-cli
+
+install:
+  - yarn
+
+script:
+  - yarn lint
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app: $HEROKU_APP_NAME
+  run:
+    - "node app/index.js"
