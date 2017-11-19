@@ -1,7 +1,10 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
     minify = require('gulp-minify'),
-    uglifyjs = require('uglify-js');
+    webpack = require('webpack-stream'),
+    runSequence = require('run-sequence');
 
 const del = require('del');
 
@@ -40,6 +43,14 @@ gulp.task('minify-socket', function() {
             .pipe(gulp.dest('dist/'));
 });
 
+//  uglify socket
+gulp.task('uglify-socket', () => {
+  return gulp.src('app/js/*.js')
+         .pipe(concat('socket.min.js'))
+         .pipe(uglify())
+         .pipe(gulp.dest('dist/'))
+});
+
 // delete dist folder
 gulp.task('clean', function (){
     return del('dist/');
@@ -49,4 +60,17 @@ gulp.task('clean', function (){
 gulp.task('default', function(done) {
   console.log('Tarefa padrao');
   done();
-})
+});
+
+// webpack
+gulp.task('webpack', function() {
+  return gulp.src('dist/index.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('dist/'));
+});
+
+// run sequence
+gulp.task('build', function (callback) {
+  runSequence('clean',
+              'sass');
+});
