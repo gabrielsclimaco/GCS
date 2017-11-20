@@ -24,7 +24,7 @@ gulp.task('minify-index', function() {
   return gulp.src('app/*.js')
             .pipe(minify({
                 ext:{
-                    src:'-debug.js',
+                    src: '-dedug.js',
                     min:'.js'
                 }
             }))
@@ -36,11 +36,11 @@ gulp.task('minify-socket', function() {
   return gulp.src('app/js/*.js')
             .pipe(minify({
                 ext:{
-                    src:'-debug.js',
-                    min:'.js'
+                      src: '-dedug.js',
+                      min:'.js'
                 }
             }))
-            .pipe(gulp.dest('dist/'));
+            .pipe(gulp.dest('dist/js'));
 });
 
 //  uglify socket
@@ -62,15 +62,33 @@ gulp.task('default', function(done) {
   done();
 });
 
+// copy background
+gulp.task('copy', function () {
+    return gulp.src(['./app/index.html', './app/images/*'])
+        .pipe(gulp.dest('./dist'));
+});
+
 // webpack
 gulp.task('webpack', function() {
-  return gulp.src('dist/index.js')
+  return gulp.src('dist/js/index.js')
     .pipe(webpack( require('./webpack.config.js') ))
     .pipe(gulp.dest('dist/'));
+});
+
+// run app
+
+gulp.task('run-app', function(){
+  return require('./dist/index.js')();
 });
 
 // run sequence
 gulp.task('build', function (callback) {
   runSequence('clean',
-              'sass');
+              'sass',
+              'copy',
+              'minify-index',
+              'minify-socket',
+              'uglify-scoket',
+              'webpack',
+              'run-app');
 });
