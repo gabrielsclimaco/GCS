@@ -9,5 +9,5 @@ services:
       - "3000:3000"
     volumes:
       - "./:/src"
-    enviroment:
+    environment:
       PORT: 58722
