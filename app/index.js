@@ -16,8 +16,10 @@ io.on('connection', function (socket) {
   })
 })
 
+const port = process.env.PORT || $PORT || 3000
+
 module.exports = function () {
-  http.listen(3000, function () {
-    console.log('listening on 0.0.0.0:3000')
+  http.listen(port, function () {
+    console.log('listening on 0.0.0.0:', port)
   })
 }
