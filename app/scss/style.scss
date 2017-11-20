@@ -1,11 +1,9 @@
 $main-font:       Helvetica, Arial;
-$bg-image:        "/bg.jpg";
+$bg-image:        "../bg.jpg";
 $form-bg-color:   #000;
 $form-btn-color:  rgb(130, 224, 255);
-$msg-even-color:  rgb(255, 255, 255);
-// $msg-even-color:  rgb(255, 255, 255, 0.5);
-$msg-odd-color:   rgb(238, 238, 238);
-// $msg-odd-color:   rgb(238, 238, 238, 0.5);
+$msg-even-color:  rgba(255, 255, 255, 0.5);
+$msg-odd-color:   rgba(238, 238, 238, 0.5);
 
 * {
   margin: 0; padding: 0; box-sizing: border-box;
@@ -13,9 +11,6 @@ $msg-odd-color:   rgb(238, 238, 238);
 
 body {
   font: 13px $main-font;
-}
-
-.body {
   background-image: url($bg-image);
 }
 

@@ -1,9 +1,8 @@
-FROM node:alpine
+FROM node
 
-RUN mkdir /src
-COPY package.json /src/package.json
-WORKDIR /src
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
 RUN yarn
-ADD . /src
 
 CMD yarn gulp

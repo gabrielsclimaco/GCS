@@ -56,12 +56,6 @@ gulp.task('clean', function (){
     return del('dist/');
 });
 
-// example
-gulp.task('default', function(done) {
-  console.log('Tarefa padrao');
-  done();
-});
-
 // copy background
 gulp.task('copy', function () {
     return gulp.src(['./app/index.html', './app/images/*'])
@@ -81,14 +75,15 @@ gulp.task('run-app', function(){
   return require('./dist/index.js')();
 });
 
-// run sequence
-gulp.task('build', function (callback) {
+// default
+gulp.task('default', function(done) {
   runSequence('clean',
               'sass',
               'copy',
               'minify-index',
               'minify-socket',
-              'uglify-scoket',
+              'uglify-socket',
               'webpack',
               'run-app');
+  done();
 });
