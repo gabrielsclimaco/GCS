@@ -5,4 +5,4 @@ ADD . /app
 WORKDIR /app
 RUN yarn
 
-CMD yarn gulp
+CMD yarn start
