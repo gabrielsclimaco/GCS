@@ -1,4 +1,27 @@
-# GCS - Trabalho final [![Build Status](https://travis-ci.org/gabrielsclimaco/GCS.svg?branch=master)](https://travis-ci.org/gabrielsclimaco/GCS) [![npm version](https://badge.fury.io/js/gcs-trabalho-final.svg)](https://badge.fury.io/js/gcs-trabalho-final)
+# GCS - Trabalho final
+
+## Sobre o projeto
+
+### O que é?
+
+O programa é o gettings started do [Socket.io](https://socket.io/), que consiste em um chat básico. Foram feitas algumas implementações a mais para fins didáticos deste projeto, como o uso do sass por exemplo.
+
+### Quem fez?
+
+* Gabriel de Souza Clímaco - 14/0140034
+
+* Maria Carolina Machado Ferreira - 14/0153411
+
+### CI/CD
+
+[![Build Status](https://travis-ci.org/gabrielsclimaco/GCS.svg?branch=master)](https://travis-ci.org/gabrielsclimaco/GCS)
+
+[Heroku](https://gcs-trabalho.herokuapp.com/)
+
+### Empacotamento
+
+[![npm version](https://badge.fury.io/js/gcs-trabalho-final.svg)](https://badge.fury.io/js/gcs-trabalho-final)
+
 
 ## Rodando o projeto
 
